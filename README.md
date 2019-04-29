@@ -15,6 +15,23 @@ Implement an application in Java capable of printing out three EU countries with
 
 http://jsonvat.com/
 
+#### Output format
+
+Output is printed to the standard output stream in the following format:
+
+```
+Highest VAT:
+	CountryName: StandardVatValue
+	CountryName: StandardVatValue
+	CountryName: StandardVatValue
+Lowest VAT:
+	CountryName: StandardVatValue
+	CountryName: StandardVatValue
+	CountryName: StandardVatValue
+```
+
+Where `CountryName` is a full country name String and `StandardVatValue` is a floating point number.
+
 #### Suggestions
 
  * keep it clean and simple (yet with a reasonable design allowing future extendibility)
