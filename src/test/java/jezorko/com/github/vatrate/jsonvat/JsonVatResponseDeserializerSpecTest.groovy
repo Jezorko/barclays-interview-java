@@ -2,13 +2,11 @@ package jezorko.com.github.vatrate.jsonvat
 
 import jezorko.com.github.vatrate.jsonvat.response.CountryVatRates
 import jezorko.com.github.vatrate.jsonvat.response.JsonVatResponse
-import jezorko.com.github.vatrate.jsonvat.response.PeriodVatRate
-import jezorko.com.github.vatrate.jsonvat.response.VatPeriod
 import spock.lang.Specification
 import spock.lang.Subject
 import spock.lang.Unroll
 
-import java.text.SimpleDateFormat
+import static jezorko.com.github.vatrate.TestUtils.vatPeriod
 
 class JsonVatResponseDeserializerSpecTest extends Specification {
 
@@ -43,14 +41,6 @@ class JsonVatResponseDeserializerSpecTest extends Specification {
 
         where:
             invalidResponseAsString << ['', 'false']
-    }
-
-    def vatPeriod(dateAsString, standard) {
-        return new VatPeriod(dateFromString(dateAsString), new PeriodVatRate(standard))
-    }
-
-    def dateFromString(dateAsString) {
-        return new SimpleDateFormat('yyyy-MM-dd').parse(dateAsString as String)
     }
 
 }
