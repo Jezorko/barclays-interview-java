@@ -1,8 +1,10 @@
 package jezorko.com.github.vatrate.jsonvat;
 
-public final class ResponseDeserializationException extends RuntimeException {
+import org.jetbrains.annotations.NotNull;
 
-    public ResponseDeserializationException(Throwable cause) {
+final class ResponseDeserializationException extends RuntimeException {
+
+    ResponseDeserializationException(final @NotNull Throwable cause) {
         super("response deserialization failed", cause);
     }
 

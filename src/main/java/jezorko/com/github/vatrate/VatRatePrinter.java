@@ -1,5 +1,7 @@
 package jezorko.com.github.vatrate;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import static java.util.Comparator.comparing;
@@ -9,7 +11,7 @@ class VatRatePrinter {
 
     private final static int REQUIRED_MINIMUM_VAT_RATES = 6;
 
-    final void printCurrentVatRates(List<CountryNameAndCurrentStandardVatRate> currentVatRates) {
+    final void printCurrentVatRates(final @NotNull List<CountryNameAndCurrentStandardVatRate> currentVatRates) {
         if (currentVatRates.size() < REQUIRED_MINIMUM_VAT_RATES) {
             throw new TooFewVatRatesException(REQUIRED_MINIMUM_VAT_RATES);
         }
@@ -29,7 +31,7 @@ class VatRatePrinter {
         printVatRate(sortedCurrentVatValues.get(0));
     }
 
-    private void printVatRate(CountryNameAndCurrentStandardVatRate vatRate) {
+    private void printVatRate(final @NotNull CountryNameAndCurrentStandardVatRate vatRate) {
         System.out.println("\t" + vatRate.getCountryName() + ": " + vatRate.getTodayActualVatRate());
     }
 

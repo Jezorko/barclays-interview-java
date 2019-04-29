@@ -18,7 +18,7 @@ public class JsonVatResponseDeserializer {
                                                                                   .create()
                                                                                   .getAdapter(JsonVatResponse.class);
 
-    JsonVatResponse deserialize(@NotNull final String responseAsJsonString) {
+    JsonVatResponse deserialize(final @NotNull String responseAsJsonString) {
         try {
             return gsonTypeAdapter.fromJson(responseAsJsonString);
         } catch (IOException exception) {

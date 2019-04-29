@@ -2,6 +2,7 @@ package jezorko.com.github.vatrate.jsonvat;
 
 import jezorko.com.github.vatrate.jsonvat.response.JsonVatResponse;
 import lombok.RequiredArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -18,12 +19,14 @@ public class JsonVatClient {
     private final HttpClient httpClient;
     private final JsonVatResponseDeserializer responseDeserializer;
 
+    @NotNull
     public final CompletableFuture<JsonVatResponse> fetchJsonVatResponse() {
         return httpClient.sendAsync(createRequest(), STRING_BODY_HANDLER)
                          .thenApply(HttpResponse::body)
                          .thenApply(responseDeserializer::deserialize);
     }
 
+    @NotNull
     private HttpRequest createRequest() {
         return HttpRequest.newBuilder()
                           .uri(JSON_VAT_URI)

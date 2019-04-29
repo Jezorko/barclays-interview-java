@@ -7,9 +7,9 @@ import lombok.RequiredArgsConstructor;
 import java.net.http.HttpClient;
 
 @RequiredArgsConstructor
-public class VatRatePrinterApplication {
+public final class VatRatePrinterApplication {
 
-    public static void main(String... args) {
+    public static void main(final String... args) {
         final var jsonVatClient = new JsonVatClient(HttpClient.newHttpClient(), new JsonVatResponseDeserializer());
         final var currentVatValuesFinder = new CurrentVatRatesFinder();
         final var vatRatePrinter = new VatRatePrinter();
