@@ -87,7 +87,7 @@
                     <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
-                            <mainClass>temp.VatRatePrinter</mainClass>
+                            <mainClass>jezorko.com.github.vatrate.VatRatePrinterApplication</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
