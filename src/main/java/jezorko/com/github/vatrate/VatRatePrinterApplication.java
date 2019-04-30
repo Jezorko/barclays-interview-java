@@ -2,11 +2,9 @@ package jezorko.com.github.vatrate;
 
 import jezorko.com.github.vatrate.jsonvat.JsonVatClient;
 import jezorko.com.github.vatrate.jsonvat.JsonVatResponseDeserializer;
-import lombok.RequiredArgsConstructor;
 
 import java.net.http.HttpClient;
 
-@RequiredArgsConstructor
 public final class VatRatePrinterApplication {
 
     public static void main(final String... args) {
